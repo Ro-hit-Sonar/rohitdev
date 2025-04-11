@@ -76,6 +76,17 @@ export default defineType({
       of: [{ type: "reference", to: { type: "category" } }],
     }),
     defineField({
+      name: "publishedAt",
+      title: "Published At",
+      type: "datetime",
+      group: "settings",
+      options: {
+        dateFormat: "YYYY-MM-DD",
+        timeFormat: "HH:mm",
+      },
+      initialValue: () => new Date().toISOString(),
+    }),
+    defineField({
       name: "body",
       title: "Body",
       type: "block-content",
